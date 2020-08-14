@@ -3,6 +3,7 @@ Lab 2 https://drive.google.com/file/d/1C1jeC52jJpjcl3Iwaksm5UALcWGnEnLJ/view?usp
 ![](lab2/Hen%20Day%20Off.png)
 
 Lab 3 https://drive.google.com/file/d/1p06R06boq2b9KMdpEWBu1pK5DaEWVQau/view?usp=sharing
+
 For the left bottom, I applied a green specular on the cube and added shininess.
 
 For the left top, I applied a green specular, blue emissive, some shininess, lowered its opacity, and made it able to be transparent.
