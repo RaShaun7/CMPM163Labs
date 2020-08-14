@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Lab 2: Intro to Three.js Part 2</title>
+		<style>
+			body { margin: 0; }
+			canvas { display: block; }
+		</style>
+	</head>
+	<body>
+		<script src="../three.js-master/build/three.js"></script>
+		<script
+			src="../three.js-master/examples/js/loaders/GLTFLoader.js">
+		</script>
+		<script>
+			var scene = new THREE.Scene();
+			var camera = new THREE.PerspectiveCamera(75,
+				window.innerWidth/window.innerHeight, 0.1, 1000);
+			var renderer = new THREE.WebGLRenderer();
+			renderer.setSize(window.innerWidth, window.innerHeight);
+			document.body.appendChild(renderer.domElement);
+			camera.position.z = 200;
+
+			var light1 = new THREE.PointLight(0xffffff, 1, 1000);
+			light1.position.set(50, 50, 100);
+			scene.add(light1);
+
+			var light2 = new THREE.PointLight(0xE5B009, 3, 1000);
+			light2.position.set(50, 0, 5);
+			scene.add(light2);
+
+			var light3 = new THREE.PointLight(0x1B0037, 3, 1000);
+			light3.position.set(50, 50, 500);
+			scene.add(light3);
+
+			var light4 = new THREE.PointLight(0x055FFF, 3, 1000);
+			light4.position.set(-50, 250, -100);
+			scene.add(light4);
+
+			var loader = new THREE.GLTFLoader();
+			loader.load('fireplace.glb', function (gltf) {
+			scene.add(gltf.scene);
+			gltf.scene.scale.x = 50;
+			gltf.scene.scale.y = 50;
+			gltf.scene.scale.z = 50;
+			gltf.scene.position.x = 60;
+			gltf.scene.position.y = -20;
+			gltf.scene.rotation.y = -1;
+			}, function (xhr) {
+			console.log((xhr.loaded / xhr.total * 100) + '% loaded' );
+			}, function (error) {
+			console.error(error);
+			});
+
+			function animate() {
+			requestAnimationFrame(animate);
+			renderer.render(scene, camera);
+			}
+			animate();
+
+			
+
+			var loader = new THREE.GLTFLoader();
+			loader.load('chicken.glb', function (gltf) {
+			scene.add(gltf.scene);
+			gltf.scene.scale.x = 1.2;
+			gltf.scene.scale.y = 1.2;
+			gltf.scene.scale.z = 1.2;
+			gltf.scene.position.x = -10;
+			gltf.scene.position.y = -30;
+			gltf.scene.rotation.y = .7;
+			}, function (xhr) {
+			console.log((xhr.loaded / xhr.total * 100) + '% loaded' );
+			}, function (error) {
+			console.error(error);
+			});
+
+			var loader = new THREE.GLTFLoader();
+			loader.load('forkLift.glb', function (gltf) {
+			scene.add(gltf.scene);
+			gltf.scene.scale.x = .3;
+			gltf.scene.scale.y = .3;
+			gltf.scene.scale.z = .3;
+			gltf.scene.position.x = -100;
+			gltf.scene.position.y = 30;
+			gltf.scene.position.z = -100;
+			gltf.scene.rotation.y = 3;
+			}, function (xhr) {
+			console.log((xhr.loaded / xhr.total * 100) + '% loaded' );
+			}, function (error) {
+			console.error(error);
+			});
+
+			function animate() {
+			requestAnimationFrame(animate);
+			renderer.render(scene, camera);
+			}
+			animate();
+
+		</script>
+	</body>
+</html>
