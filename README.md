@@ -24,3 +24,12 @@ Lab 5 https://drive.google.com/file/d/1gveZ2q5Ma7S5U6xyTCuPpEkslec_1qaV/view?usp
 The particle system was modified to be orange by changing the start color.
 The wheel colors were changed to blue and green by giving them new materials.
 The checkpoints were changed to red by giving them new materials.
+
+Lab6
+![](lab6/lab6%20screenshot.png)
+Directional light: Acts like the sun. Affects all objects in the scene based on its rotation. Position is irrelevant. 
+Point light: behaves like a bare lightbulb. Illuminates based on position. Rotation is irrelevant. Shines equally in all directions.
+Spot light: behaves like a flashlight. Points in a direction based on a rotation and illuminate all objects in a cone. respond to position and rotation.
+Area light: Only work when baking a light map. shines in all direction to one side of a rectangular plane.
+
+
